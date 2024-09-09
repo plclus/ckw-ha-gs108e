@@ -47,6 +47,13 @@ class GS108E(AutodetectedSwitchModel):
         ),
     ]
 
+class GSS108E(AutodetectedSwitchModel):
+    MODEL_NAME = "GSS108E"
+    PORTS = 8
+    CHECKS_AND_RESULTS = [
+        ("check_login_form_rand", [True]),
+        ("check_login_title_tag", ["GSS108E"])
+    ]
 
 class GS108Ev3(AutodetectedSwitchModel):
     MODEL_NAME = "GS108Ev3"
