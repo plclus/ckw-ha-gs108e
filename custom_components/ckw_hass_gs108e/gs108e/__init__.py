@@ -37,6 +37,7 @@ MODELS = [
     models.GS105E,
     models.GS105Ev2,
     models.GS108E,
+    models.GSS108E,
     models.GS108Ev3,
     models.GS305EP,
     models.GS308EP,
