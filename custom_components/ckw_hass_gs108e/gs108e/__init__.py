@@ -13,7 +13,7 @@ LOGIN_CGI_URL_TMPL = "http://{ip}/login.cgi"
 SWITCH_INFO_HTM_URL_TMPL = "http://{ip}/switch_info.htm"
 SWITCH_INFO_CGI_URL_TMPL = "http://{ip}/switch_info.cgi"
 PORT_STATISTICS_URL_TMPL = "http://{ip}/portStatistics.cgi"
-PORT_STATUS_URL_TMPL = "http://{ip}/status.htm"
+PORT_STATUS_URL_TMPL = "http://{ip}/status.cgi"
 POE_PORT_CONFIG_CGI_URL = "http://{ip}/PoEPortConfig.cgi"
 ALLOWED_COOKIE_TYPES = ["GS108SID", "SID"]
 
@@ -507,7 +507,7 @@ class NetgearSwitchConnector:
                 switch_name = tree.xpath('//input[@id="switch_name"]')[0].value
 
                 # Detect Firmware
-                switch_firmware = tree.xpath('//table[@id="tbl1"]/tr[6]/td[2]')[0].text
+                switch_firmware = tree.xpath('//table[@id="tbl2"]/tr[5]/td[2]')[0].text
                 if switch_firmware is None:
                     # Fallback older versions
                     switch_firmware = tree.xpath('//table[@id="tbl1"]/tr[4]/td[2]')[
@@ -515,7 +515,7 @@ class NetgearSwitchConnector:
                     ].text
 
                 switch_bootloader_x = tree.xpath('//td[@id="loader"]')
-                switch_serial_number_x = tree.xpath('//table[@id="tbl1"]/tr[3]/td[2]')
+                switch_serial_number_x = tree.xpath('//table[@id="tbl2"]/tr[3]/td[2]')
                 client_hash_x = tree.xpath('//input[@id="hash"]')
 
                 if switch_bootloader_x:
