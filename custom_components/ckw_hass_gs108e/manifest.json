@@ -1,5 +1,5 @@
 {
-  "domain": "ckw_hass_gs108e",
+  "domain": "netgear",
   "name": "Netgear GS108e Integration",
   "documentation": "https://github.com/plclus/ckw-ha-gs108e/blob/main/README.md",
   "config_flow": true,
